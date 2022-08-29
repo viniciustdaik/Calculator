@@ -42,11 +42,7 @@ function preload(){
 }
 
 function setup(){
-  if(!isMobile){
-    createCanvas(windowWidth, windowHeight);
-  }else{
-    createCanvas(displayWidth, displayHeight);
-  }
+  createCanvas(windowWidth, windowHeight);
   
   initialWidth = width;
   
@@ -189,6 +185,11 @@ function setup(){
   MultiplicationButton.position(windowWidth / 2 + 90, height / 2 + 80);
   DivisionButton.position(windowWidth / 2 + 90, height / 2 + 150);
   ResultScreen.position(windowWidth / 2 - 105, height / 2 - 190);
+  if(!isMobile){
+    numberPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);
+  }else{
+    numberPreviewText.position(ResultScreen.x, ResultScreen.y-5);
+  }
 
   OneButton.mousePressed(handleOne);
   TwoButton.mousePressed(handleTwo);
@@ -286,6 +287,12 @@ function draw(){
     ResultText.position(ResultScreen.x, ResultScreen.y-5);
     numberPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);
 
+  }
+
+  if(!isMobile){
+    numberPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);
+  }else{
+    numberPreviewText.position(ResultScreen.x, ResultScreen.y-5);
   }
   
   fill('cyan');
