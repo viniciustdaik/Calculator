@@ -2,6 +2,7 @@ html, body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  max-zoom: 1.0;
 }
 
 canvas{
@@ -9,8 +10,8 @@ canvas{
 }
 
 .AddButton{
-  width: 70px;
-  height: 70px;
+  width: 70px; /* 70px */ /* 6.6%px */
+  height: 70px; /* 70px */ /* 13.6%px */
   border-radius: 10px; /* 15px */
   background-color: #dde016;
   padding: 10px;
@@ -23,8 +24,8 @@ canvas{
 }
 
 .AddCalculatorBase{
-  width: 260px;
-  height: 400px;
+  width: 260px; /* 260px */
+  height: 400px; /* 400px */
   border-radius: 10px; /* 15px */
   background-color: #ead180;
   padding: 10px;
@@ -36,8 +37,8 @@ canvas{
 }
 
 .AddButtonLarge{
-  width: 140px;
-  height: 70px;
+  width: 140px; /* 140px */ /* 13.4%px */
+  height: 70px; /* 70px */ /* 13.6%px */
   border-radius: 10px; /* 15px */
   background-color: #dde016;
   padding: 10px;
@@ -50,8 +51,8 @@ canvas{
 }
 
 .AddResultScreen{
-  width: 250px;
-  height: 50px;
+  width: 250px; /* 250px */
+  height: 50px; /* 50px */
   border-radius: 10px;
   background-color: #3b0875;
   padding: 10px;
