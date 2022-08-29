@@ -67,7 +67,11 @@ function setup(){
   ResultText.html(result);
 
   numberPreviewText = createElement("h3");
-  numberPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);
+  if(!isMobile){
+    numberPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);
+  }else{
+    numberPreviewText.position(ResultScreen.x, ResultScreen.y-5);
+  }
   numberPreviewText.size(12, 12);
   numberPreviewText.style('font-size', '12px');
   numberPreviewText.style('color', 'blue');
