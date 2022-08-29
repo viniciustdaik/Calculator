@@ -35,6 +35,8 @@ var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
 var initialWidth, newWidthAdded;
 
+var numberPreviewText;
+
 function preload(){
   
 }
@@ -57,9 +59,19 @@ function setup(){
   ResultText.size(250, 24);
   ResultText.style("text-align", 'center');
   //ResultText.style("background-color", 'blue');
- 
-  ResultText.html(result);
   
+  ResultText.html(result);
+
+  numberPreviewText = createElement("h3");
+  numberPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);
+  numberPreviewText.size(12, 12);
+  numberPreviewText.style('font-size', '12px');
+  numberPreviewText.style('color', 'blue');
+  numberPreviewText.style("text-align", 'center');
+  //numberPreviewText.style("background-color", 'lightblue');
+
+  numberPreviewText.html("");
+
   OneButton = createButton("1");
   OneButton.class("AddButton");
   //OneButton.mousePressed(handleOne);
@@ -198,6 +210,18 @@ function draw(){
 
   ResultText.html(result);
   ResultText.position(ResultScreen.x, ResultScreen.y-5);
+
+  if(operation == "plus"){
+    numberPreviewText.html("+");
+  }else if(operation == "minus"){
+    numberPreviewText.html("-");
+  }else if(operation == "multiply"){
+    numberPreviewText.html("*");
+  }else if(operation == "divide"){
+    numberPreviewText.html("/");
+  }else{
+    numberPreviewText.html("");
+  }
   
   textSize(45);
   textAlign("center");
@@ -252,6 +276,7 @@ function draw(){
     DivisionButton.position(windowWidth / 2 + 90, height / 2 + 150);
     ResultScreen.position(windowWidth / 2 - 105, height / 2 - 190);
     ResultText.position(ResultScreen.x, ResultScreen.y-5);
+    numberPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);
 
   }
   
@@ -488,6 +513,7 @@ function handleClear(){
   result = "Sem Resultados";
   allNumbers = [];
   dot = false;
+  operation = "";
 }
 
 function handleDot(){
