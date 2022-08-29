@@ -29,12 +29,20 @@ var dot = false;
 
 var operation = "";
 
+var keyBoardDelayTime = true;
+
+var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+var initialWidth, newWidthAdded;
+
 function preload(){
   
 }
 
 function setup(){
   createCanvas(windowWidth, windowHeight);
+  
+  initialWidth = width;
   
   CalculatorBase = createImg("nothing.png");
   CalculatorBase.class("AddCalculatorBase");
@@ -195,28 +203,57 @@ function draw(){
   textAlign("center");
   fill('darkorange');
   stroke('cyan');
-  text("Só Uma Calculadora...", width / 2, 45);
+  if(initialWidth == width){
+    text("Só Uma Calculadora...", width / 2, 45);
+  }else{
+    text("Só Uma Calculadora...", width / 2-newWidthAdded/2, 45);
+  }
+
+  /*if(keyCode == "49" || keyCode == "35"){
+    key = '';
+    keyCode = 0;
+    if(keyBoardDelayTime == true){
+      handleOne();
+    }
+    key = '';
+    keyCode = 0;
+  }
+
+  if(keyIsDown(49)){
+    console.log("EEEEEEEE");
+  }
   
-  /*CalculatorBase.position(windowWidth / 2 - 120, height / 2 - 200);
-  OneButton.position(windowWidth / 2 - 120, height / 2 + 80);
-  TwoButton.position(windowWidth / 2 - 50, height / 2 + 80);
-  ThreeButton.position(windowWidth / 2 + 20, height / 2 + 80);
-  FourButton.position(windowWidth / 2 - 120, height / 2 + 10);
-  FiveButton.position(windowWidth / 2 - 50, height / 2 + 10);
-  SixButton.position(windowWidth / 2 + 20, height / 2 + 10);
-  SevenButton.position(windowWidth / 2 - 120, height / 2 - 60);
-  EightButton.position(windowWidth / 2 - 50, height / 2 - 60);
-  NineButton.position(windowWidth / 2 + 20, height / 2 - 60);
-  ZeroButton.position(windowWidth / 2 - 120, height / 2 + 150);
-  DotButton.position(windowWidth / 2 + 20, height / 2 + 150);
-  ClearButton.position(windowWidth / 2 - 120, height / 2 - 130);
-  DeleteButton.position(windowWidth / 2 - 50, height / 2 - 130);
-  ResultButton.position(windowWidth / 2 + 20, height / 2 - 130);
-  PlusButton.position(windowWidth / 2 + 90, height / 2 - 60);
-  MinusButton.position(windowWidth / 2 + 90, height / 2 + 10);
-  MultiplicationButton.position(windowWidth / 2 + 90, height / 2 + 80);
-  DivisionButton.position(windowWidth / 2 + 90, height / 2 + 150);
-  ResultScreen.position(windowWidth / 2 - 105, height / 2 - 190);*/
+  setTimeout(() => {
+    if(keyBoardDelayTime == false){
+      keyBoardDelayTime = true;
+    }
+  }, 2);*/
+
+  if(!isMobile){
+
+    CalculatorBase.position(windowWidth / 2 - 120, height / 2 - 200);
+    OneButton.position(windowWidth / 2 - 120, height / 2 + 80);
+    TwoButton.position(windowWidth / 2 - 50, height / 2 + 80);
+    ThreeButton.position(windowWidth / 2 + 20, height / 2 + 80);
+    FourButton.position(windowWidth / 2 - 120, height / 2 + 10);
+    FiveButton.position(windowWidth / 2 - 50, height / 2 + 10);
+    SixButton.position(windowWidth / 2 + 20, height / 2 + 10);
+    SevenButton.position(windowWidth / 2 - 120, height / 2 - 60);
+    EightButton.position(windowWidth / 2 - 50, height / 2 - 60);
+    NineButton.position(windowWidth / 2 + 20, height / 2 - 60);
+    ZeroButton.position(windowWidth / 2 - 120, height / 2 + 150);
+    DotButton.position(windowWidth / 2 + 20, height / 2 + 150);
+    ClearButton.position(windowWidth / 2 - 120, height / 2 - 130);
+    DeleteButton.position(windowWidth / 2 - 50, height / 2 - 130);
+    ResultButton.position(windowWidth / 2 + 20, height / 2 - 130);
+    PlusButton.position(windowWidth / 2 + 90, height / 2 - 60);
+    MinusButton.position(windowWidth / 2 + 90, height / 2 + 10);
+    MultiplicationButton.position(windowWidth / 2 + 90, height / 2 + 80);
+    DivisionButton.position(windowWidth / 2 + 90, height / 2 + 150);
+    ResultScreen.position(windowWidth / 2 - 105, height / 2 - 190);
+    ResultText.position(ResultScreen.x, ResultScreen.y-5);
+
+  }
   
   fill('cyan');
   stroke('green');
@@ -343,6 +380,58 @@ function draw(){
   }
   
 }*/
+
+function keyTyped() {
+  if (key === '1') {
+    handleOne();
+  } else if (key === '2') {
+    handleTwo();
+  }
+  else if (key === '3') {
+    handleThree();
+  }
+  else if (key === '4') {
+    handleFour();
+  }
+  else if (key === '5') {
+    handleFive();
+  }
+  else if (key === '6') {
+    handleSix();
+  }
+  else if (key === '7') {
+    handleSeven();
+  }
+  else if (key === '8') {
+    handleEight();
+  }
+  else if (key === '9') {
+    handleNine();
+  }
+  else if (key === '0') {
+    handleZero();
+  }
+  else if (key === '+') {
+    handlePlus();
+  }
+  else if (key === '-') {
+    handleMinus();
+  }
+  else if (key === '*') {
+    handleMultiply();
+  }
+  else if (key === '/') {
+    handleDivide();
+  }
+  else if (key === '.') {
+    handleDot();
+  }
+  else if (key === '=') {
+    handleResult();
+  }
+  // uncomment to prevent any default behavior
+  // return false;
+}
 
 function handleOne(){
   numbers = numbers+""+1;
@@ -548,3 +637,11 @@ function handleDivide(){
   operation = "divide";
 }
 
+function windowResized() {
+  if(!isMobile && windowWidth > width){
+    resizeCanvas(windowWidth, height);
+    if(initialWidth !== width){
+      newWidthAdded = width - initialWidth;
+    }
+  }
+}
