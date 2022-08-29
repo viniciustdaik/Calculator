@@ -42,7 +42,11 @@ function preload(){
 }
 
 function setup(){
-  createCanvas(windowWidth, windowHeight);
+  if(!isMobile){
+    createCanvas(windowWidth, windowHeight);
+  }else{
+    createCanvas(displayWidth, displayHeight);
+  }
   
   initialWidth = width;
   
