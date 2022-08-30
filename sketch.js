@@ -252,7 +252,7 @@ function draw(){
     operationPreviewText.html("");
   }
   
-  textSize(45);
+  /*textSize(45);
   textAlign("center");
   fill('darkorange');
   stroke('cyan');
@@ -260,7 +260,7 @@ function draw(){
     text("Só Uma Calculadora...", width / 2, 45);
   }else{
     text("Só Uma Calculadora...", width / 2-newWidthAdded/2, 45);
-  }
+  }*/
 
   /*if(keyCode == "49" || keyCode == "35"){
     key = '';
