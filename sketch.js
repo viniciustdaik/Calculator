@@ -150,12 +150,12 @@ function setup(){
   //MinusButton.mousePressed(handleMinus);
   //MinusButton.mousePressed(calculate("-"));
   
-  MultiplicationButton = createButton("*");
+  MultiplicationButton = createButton("x");
   MultiplicationButton.class("AddButton");
   //MultiplicationButton.mousePressed(handleMultiply);
   //MultiplicationButton.mousePressed(calculate("*"));
   
-  DivisionButton = createButton("/");
+  DivisionButton = createButton(":");
   DivisionButton.class("AddButton");
   //DivisionButton.mousePressed(handleDivide);
   //DivisionButton.mousePressed(calculate("/"));
@@ -169,7 +169,7 @@ function setup(){
   //ResultButton.mousePressed(handleResult);
   //ResultButton.mousePressed(calculate("result"));
   
-  DotButton = createButton(".");
+  DotButton = createButton(",");
   DotButton.class("AddButton");
   //DotButton.mousePressed(handleDot);
   //DotButton.mousePressed(calculate("."));
