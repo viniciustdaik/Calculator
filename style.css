@@ -2,7 +2,6 @@ html, body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  max-zoom: 1.0;
 }
 
 canvas{
@@ -14,6 +13,7 @@ canvas{
   height: 70px; /* 70px */ /* 13.6%px */
   border-radius: 10px; /* 15px */
   background-color: #dde016;
+  font-size: 35px;
   padding: 10px;
   background-size: cover;
   display: inline-block;
@@ -41,6 +41,7 @@ canvas{
   height: 70px; /* 70px */ /* 13.6%px */
   border-radius: 10px; /* 15px */
   background-color: #dde016;
+  font-size: 35px;
   padding: 10px;
   background-size: cover;
   display: inline-block;
