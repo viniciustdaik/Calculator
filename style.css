@@ -9,8 +9,8 @@ canvas{
 }
 
 .AddButton{
-  width: 70px; /* 70px */ /* 6.6%px */
-  height: 70px; /* 70px */ /* 13.6%px */
+  width: 68px; /* 70px */ /* 6.6%px */
+  height: 69px; /* 70px */ /* 13.6%px */
   border-radius: 10px; /* 15px */
   background-color: #dde016;
   font-size: 35px;
@@ -24,7 +24,7 @@ canvas{
 }
 
 .AddCalculatorBase{
-  width: 260px; /* 260px */
+  width: 260px; /* 260px 17.4%;*/
   height: 400px; /* 400px */
   border-radius: 10px; /* 15px */
   background-color: #ead180;
@@ -37,8 +37,8 @@ canvas{
 }
 
 .AddButtonLarge{
-  width: 140px; /* 140px */ /* 13.4%px */
-  height: 70px; /* 70px */ /* 13.6%px */
+  width: 138px; /* 140px */ /* 13.4%px */
+  height: 69px; /* 70px */ /* 13.6%px */
   border-radius: 10px; /* 15px */
   background-color: #dde016;
   font-size: 35px;
