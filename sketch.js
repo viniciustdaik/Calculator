@@ -48,8 +48,8 @@ function setup(){
   
   CalculatorBase = createImg("nothing.png");
   CalculatorBase.class("AddCalculatorBase");
-  CalculatorBase.position(width / 2 - 120, height / 2 - 200);
-  
+  CalculatorBase.position(windowWidth / 2 - 120, height / 2 - 200 );
+
   ResultScreen = createButton("");
   ResultScreen.class("AddResultScreen");
   ResultScreen.position(width / 2 - 105, height / 2 - 190);
@@ -232,6 +232,7 @@ function setup(){
 function draw(){
   //calculate();
   background('orange');
+  //console.log(CalculatorBase.height);
 
   if(numbers !== ""){
     numberPreviewText.html(numbers);
@@ -286,8 +287,17 @@ function draw(){
 
   if(!isMobile){
 
+    
+    /*if(initialWidth == windowWidth){
+      CalculatorBase.position(width / 2 - CalculatorBase.width/2.32, height / 2 - 200);
+      CalculatorBase.position(windowWidth / 2 - 120, height / 2 - 200);
+    }else{
+      CalculatorBase.position(windowWidth / 2 - 120, height / 2 - 200);
+      CalculatorBase.size('260px', '400px');
+      console.log(CalculatorBase.width, CalculatorBase.height);
+    }*/
     CalculatorBase.position(windowWidth / 2 - 120, height / 2 - 200);
-    OneButton.position(windowWidth / 2 - 120, height / 2 + 80);
+    /* OneButton.position(windowWidth / 2 - 120, height / 2 + 80);
     TwoButton.position(windowWidth / 2 - 50, height / 2 + 80);
     ThreeButton.position(windowWidth / 2 + 20, height / 2 + 80);
     FourButton.position(windowWidth / 2 - 120, height / 2 + 10);
@@ -304,7 +314,25 @@ function draw(){
     PlusButton.position(windowWidth / 2 + 90, height / 2 - 60);
     MinusButton.position(windowWidth / 2 + 90, height / 2 + 10);
     MultiplicationButton.position(windowWidth / 2 + 90, height / 2 + 80);
-    DivisionButton.position(windowWidth / 2 + 90, height / 2 + 150);
+    DivisionButton.position(windowWidth / 2 + 90, height / 2 + 150);  */
+    OneButton.position(windowWidth / 2 - 120+1, height / 2 + 80);
+    TwoButton.position(windowWidth / 2 - 50+1, height / 2 + 80);
+    ThreeButton.position(windowWidth / 2 + 20+1, height / 2 + 80);
+    FourButton.position(windowWidth / 2 - 120+1, height / 2 + 10);
+    FiveButton.position(windowWidth / 2 - 50+1, height / 2 + 10);
+    SixButton.position(windowWidth / 2 + 20+1, height / 2 + 10);
+    SevenButton.position(windowWidth / 2 - 120+1, height / 2 - 60);
+    EightButton.position(windowWidth / 2 - 50+1, height / 2 - 60);
+    NineButton.position(windowWidth / 2 + 20+1, height / 2 - 60);
+    ZeroButton.position(windowWidth / 2 - 120+1, height / 2 + 150);
+    DotButton.position(windowWidth / 2 + 20+1, height / 2 + 150);
+    ClearButton.position(windowWidth / 2 - 120+1, height / 2 - 130);
+    DeleteButton.position(windowWidth / 2 - 50+1, height / 2 - 130);
+    ResultButton.position(windowWidth / 2 + 20+1, height / 2 - 130);
+    PlusButton.position(windowWidth / 2 + 90+1, height / 2 - 60);
+    MinusButton.position(windowWidth / 2 + 90+1, height / 2 + 10);
+    MultiplicationButton.position(windowWidth / 2 + 90+1, height / 2 + 80);
+    DivisionButton.position(windowWidth / 2 + 90+1, height / 2 + 150);
     ResultScreen.position(windowWidth / 2 - 105, height / 2 - 190);
     ResultText.position(ResultScreen.x, ResultScreen.y-5);
 
