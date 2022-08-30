@@ -188,7 +188,7 @@ function setup(){
   if(!isMobile){
     numberPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);
   }else{
-    numberPreviewText.position(ResultScreen.x, ResultScreen.y-5);
+    numberPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);//ResultScreen.y-5
   }
 
   OneButton.mousePressed(handleOne);
