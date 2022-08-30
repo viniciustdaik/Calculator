@@ -78,9 +78,9 @@ function setup(){
 
   operationPreviewText = createElement("h3");
   if(!isMobile){
-    operationPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);
+    operationPreviewText.position(ResultScreen.x+5, ResultScreen.y-5-ResultScreen.height);
   }else{
-    operationPreviewText.position(ResultScreen.x, ResultScreen.y-ResultScreen.height/2);//ResultScreen.y-5
+    operationPreviewText.position(ResultScreen.x+5, ResultScreen.y-ResultScreen.height/2);//ResultScreen.y-5
   }
   operationPreviewText.size(12, 12);
   operationPreviewText.style('font-size', '12px');
@@ -200,10 +200,10 @@ function setup(){
   DivisionButton.position(windowWidth / 2 + 90, height / 2 + 150);
   ResultScreen.position(windowWidth / 2 - 105, height / 2 - 190);
   if(!isMobile){
-    operationPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);
+    operationPreviewText.position(ResultScreen.x+5, ResultScreen.y-5-ResultScreen.height);
     numberPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);
   }else{
-    operationPreviewText.position(ResultScreen.x, ResultScreen.y-ResultScreen.height/2);//ResultScreen.y-5
+    operationPreviewText.position(ResultScreen.x+5, ResultScreen.y-ResultScreen.height/2);//ResultScreen.y-5
     numberPreviewText.position(ResultScreen.x, ResultScreen.y-ResultScreen.height/2);//ResultScreen.y-5
   }
   
@@ -247,9 +247,9 @@ function draw(){
   }else if(operation == "minus"){
     operationPreviewText.html("-");
   }else if(operation == "multiply"){
-    operationPreviewText.html("*");
+    operationPreviewText.html("x|*");
   }else if(operation == "divide"){
-    operationPreviewText.html("/");
+    operationPreviewText.html(":|/");
   }else{
     operationPreviewText.html("");
   }
@@ -311,10 +311,10 @@ function draw(){
   }
 
   if(!isMobile){
-    operationPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);
+    operationPreviewText.position(ResultScreen.x+5, ResultScreen.y-5-ResultScreen.height);
     numberPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);
   }else{
-    operationPreviewText.position(ResultScreen.x, ResultScreen.y-ResultScreen.height/2);//ResultScreen.y-5
+    operationPreviewText.position(ResultScreen.x+5, ResultScreen.y-ResultScreen.height/2);//ResultScreen.y-5
     numberPreviewText.position(ResultScreen.x, ResultScreen.y-ResultScreen.height/2);//ResultScreen.y-5
   }
   
