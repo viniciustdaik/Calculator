@@ -66,7 +66,7 @@ function setup(){
   if(!isMobile){
     numberPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);
   }else{
-    numberPreviewText.position(ResultScreen.x, ResultScreen.y-5);
+    numberPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);//ResultScreen.y-5
   }
   numberPreviewText.size(12, 12);
   numberPreviewText.style('font-size', '12px');
@@ -292,7 +292,7 @@ function draw(){
   if(!isMobile){
     numberPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);
   }else{
-    numberPreviewText.position(ResultScreen.x, ResultScreen.y-5);
+    numberPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);//ResultScreen.y-5
   }
   
   fill('cyan');
