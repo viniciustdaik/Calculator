@@ -94,6 +94,17 @@ function setup(){
 
   OneButton = createButton("1");
   OneButton.class("AddButton");
+  /*OneButton.style("width", '68px');OneButton.style("height", '69px');
+  OneButton.style("border-radius", '10px');
+  OneButton.style("background-color", '#dde016');
+  OneButton.style("font-size", '35px'); 
+  OneButton.style("padding", '10px'); 
+  OneButton.style("background-size", 'cover');
+  OneButton.style("display", 'inline-block');
+  OneButton.style("cursor", 'pointer');
+  OneButton.style("-webkit-transition-duration", '0.0s');
+  OneButton.style("transition-duration", '0.0s');
+  OneButton.style("outline", 'none');*/
   //OneButton.mousePressed(handleOne);
   //OneButton.mousePressed(calculate(1));
   
@@ -228,10 +239,10 @@ function setup(){
   PlusButton.mousePressed(handlePlus);
   MinusButton.mousePressed(handleMinus);
   MultiplicationButton.mousePressed(handleMultiply);
+  DivisionButton.mousePressed(handleDivide);
   RaizQuadradaButton.mousePressed(handleRaizQuadrada);
   ResultButton.mousePressed(handleResult);
   //DeleteButton.mousePressed(handleDelete);
-  ResultButton.mousePressed(handleResult);
   DotButton.mousePressed(handleDot);
   ClearButton.mousePressed(handleClear);
 
