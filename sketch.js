@@ -35,7 +35,7 @@ var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
 var initialWidth, newWidthAdded;
 
-var numberPreviewText;
+var operationPreviewText, numberPreviewText;
 
 function preload(){
   
@@ -62,19 +62,31 @@ function setup(){
   
   ResultText.html(result);
 
-  numberPreviewText = createElement("h3");
+  operationPreviewText = createElement("h3");
   if(!isMobile){
-    numberPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);
+    operationPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);
   }else{
-    numberPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);//ResultScreen.y-5
+    operationPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height/2);//ResultScreen.y-5
   }
-  numberPreviewText.size(12, 12);
-  numberPreviewText.style('font-size', '12px');
-  numberPreviewText.style('color', 'blue');
-  numberPreviewText.style("text-align", 'center');
-  //numberPreviewText.style("background-color", 'lightblue');
+  operationPreviewText.size(12, 12);
+  operationPreviewText.style('font-size', '12px');
+  operationPreviewText.style('color', 'blue');
+  operationPreviewText.style("text-align", 'center');
+  //operationPreviewText.style("background-color", 'lightblue');
 
-  numberPreviewText.html("");
+  //numberPreviewText = createElement("h3");
+  if(!isMobile){
+    operationPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);
+  }else{
+    operationPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height/2);//ResultScreen.y-5
+  }
+  operationPreviewText.size(12, 12);
+  operationPreviewText.style('font-size', '12px');
+  operationPreviewText.style('color', 'blue');
+  operationPreviewText.style("text-align", 'center');
+  //operationPreviewText.style("background-color", 'lightblue');
+
+  operationPreviewText.html("");
 
   OneButton = createButton("1");
   OneButton.class("AddButton");
@@ -186,9 +198,9 @@ function setup(){
   DivisionButton.position(windowWidth / 2 + 90, height / 2 + 150);
   ResultScreen.position(windowWidth / 2 - 105, height / 2 - 190);
   if(!isMobile){
-    numberPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);
+    operationPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);
   }else{
-    numberPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);//ResultScreen.y-5
+    operationPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height/2);//ResultScreen.y-5
   }
 
   OneButton.mousePressed(handleOne);
@@ -221,15 +233,15 @@ function draw(){
   ResultText.position(ResultScreen.x, ResultScreen.y-5);
 
   if(operation == "plus"){
-    numberPreviewText.html("+");
+    operationPreviewText.html("+");
   }else if(operation == "minus"){
-    numberPreviewText.html("-");
+    operationPreviewText.html("-");
   }else if(operation == "multiply"){
-    numberPreviewText.html("*");
+    operationPreviewText.html("*");
   }else if(operation == "divide"){
-    numberPreviewText.html("/");
+    operationPreviewText.html("/");
   }else{
-    numberPreviewText.html("");
+    operationPreviewText.html("");
   }
   
   textSize(45);
@@ -285,14 +297,14 @@ function draw(){
     DivisionButton.position(windowWidth / 2 + 90, height / 2 + 150);
     ResultScreen.position(windowWidth / 2 - 105, height / 2 - 190);
     ResultText.position(ResultScreen.x, ResultScreen.y-5);
-    numberPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);
+    operationPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);
 
   }
 
   if(!isMobile){
-    numberPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);
+    operationPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);
   }else{
-    numberPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);//ResultScreen.y-5
+    operationPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height/2);//ResultScreen.y-5
   }
   
   fill('cyan');
