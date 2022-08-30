@@ -146,7 +146,7 @@ function setup(){
   //DivisionButton.mousePressed(handleDivide);
   //DivisionButton.mousePressed(calculate("/"));
   
-  DeleteButton = createButton("Delete");
+  DeleteButton = createButton("Del");
   DeleteButton.class("AddButton");
   //DeleteButton.mousePressed(calculate("delete"));
   
@@ -466,7 +466,7 @@ function keyTyped() {
   else if (key === '.') {
     handleDot();
   }
-  else if (key === '=') {
+  else if (key === '=' || key === 'Enter') {
     handleResult();
   }
   // uncomment to prevent any default behavior
