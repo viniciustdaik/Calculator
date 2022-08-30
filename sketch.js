@@ -66,7 +66,7 @@ function setup(){
   if(!isMobile){
     numberPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);
   }else{
-    numberPreviewText.position(ResultScreen.x, ResultScreen.y+5-ResultScreen.height/2);//ResultScreen.y-5
+    numberPreviewText.position(ResultScreen.x, ResultScreen.y-ResultScreen.height/2);//ResultScreen.y-5
   }
   numberPreviewText.size(250, 12);
   numberPreviewText.style('font-size', '12px');
@@ -80,7 +80,7 @@ function setup(){
   if(!isMobile){
     operationPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);
   }else{
-    operationPreviewText.position(ResultScreen.x, ResultScreen.y+5-ResultScreen.height/2);//ResultScreen.y-5
+    operationPreviewText.position(ResultScreen.x, ResultScreen.y-ResultScreen.height/2);//ResultScreen.y-5
   }
   operationPreviewText.size(12, 12);
   operationPreviewText.style('font-size', '12px');
@@ -203,9 +203,10 @@ function setup(){
     operationPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);
     numberPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);
   }else{
-    operationPreviewText.position(ResultScreen.x, ResultScreen.y+5-ResultScreen.height/2);//ResultScreen.y-5
-    numberPreviewText.position(ResultScreen.x, ResultScreen.y+5-ResultScreen.height/2);//ResultScreen.y-5
+    operationPreviewText.position(ResultScreen.x, ResultScreen.y-ResultScreen.height/2);//ResultScreen.y-5
+    numberPreviewText.position(ResultScreen.x, ResultScreen.y-ResultScreen.height/2);//ResultScreen.y-5
   }
+  
   OneButton.mousePressed(handleOne);
   TwoButton.mousePressed(handleTwo);
   ThreeButton.mousePressed(handleThree);
@@ -313,8 +314,8 @@ function draw(){
     operationPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);
     numberPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);
   }else{
-    operationPreviewText.position(ResultScreen.x, ResultScreen.y+5-ResultScreen.height/2);//ResultScreen.y-5
-    numberPreviewText.position(ResultScreen.x, ResultScreen.y+5-ResultScreen.height/2);//ResultScreen.y-5
+    operationPreviewText.position(ResultScreen.x, ResultScreen.y-ResultScreen.height/2);//ResultScreen.y-5
+    numberPreviewText.position(ResultScreen.x, ResultScreen.y-ResultScreen.height/2);//ResultScreen.y-5
   }
   
   fill('cyan');
