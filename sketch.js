@@ -626,9 +626,10 @@ function handleResult(){
     var othernumber = allNumbers[e];
     var othernumber2 = allNumbers[e+1];
     var SubtractionToWork;
-    if(result == "Sem Resultados"){
+    if(result == "Sem Resultados" || operation == "divide" || operation == "multiply"){
       SubtractionToWork = 1;
-    }else if(result !== "Sem Resultados" && allNumbers.length !== 1){
+    }else if(result !== "Sem Resultados" && allNumbers.length !== 1 && operation !== "divide"
+    && operation !== "multiply"){
       SubtractionToWork = 0;
     }
     for(var e = 0; e < allNumbers.length-SubtractionToWork; e = e+1){
@@ -719,6 +720,9 @@ function handlePlus(){
     console.log(numbers, allNumbers);
     operation = "plus";
   }
+  if(result !== "Sem Resultados" && operation !== "plus"){
+    operation = "plus";
+  }
 }
 
 function handleMinus(){
@@ -727,6 +731,9 @@ function handleMinus(){
     numbers = "";
     dot = false;
     console.log(numbers, allNumbers);
+    operation = "minus";
+  }
+  if(result !== "Sem Resultados" && operation !== "minus"){
     operation = "minus";
   }
 }
@@ -739,6 +746,9 @@ function handleMultiply(){
     console.log(numbers, allNumbers);
     operation = "multiply";
   }
+  if(result !== "Sem Resultados" && operation !== "multiply"){
+    operation = "multiply";
+  }
 }
 
 function handleDivide(){
@@ -747,6 +757,9 @@ function handleDivide(){
     numbers = "";
     dot = false;
     console.log(numbers, allNumbers);
+    operation = "divide";
+  }
+  if(result !== "Sem Resultados" && operation !== "divide"){
     operation = "divide";
   }
 }
