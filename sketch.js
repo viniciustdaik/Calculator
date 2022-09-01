@@ -359,7 +359,9 @@ function draw(){
     ResultText.position(ResultScreen.x, ResultScreen.y-5);
 
   }
-
+  if(keyWentDown(35)){
+    console.log("EEEEEEEE");
+  }
   if(!isMobile){
     operationPreviewText.position(ResultScreen.x+5, ResultScreen.y-5-ResultScreen.height);
     numberPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);
@@ -495,55 +497,60 @@ function draw(){
 }*/
 
 function keyTyped() {
-  if (key === '1') {
-    handleOne();
-  } else if (key === '2') {
-    handleTwo();
+  if(key !== ''){
+    if (key === '1') {
+      handleOne();
+    } else if (key === '2') {
+      handleTwo();
+    }
+    else if (key === '3') {
+      handleThree();
+    }
+    else if (key === '4') {
+      handleFour();
+    }
+    else if (key === '5') {
+      handleFive();
+    }
+    else if (key === '6') {
+      handleSix();
+    }
+    else if (key === '7') {
+      handleSeven();
+    }
+    else if (key === '8') {
+      handleEight();
+    }
+    else if (key === '9') {
+      handleNine();
+    }
+    else if (key === '0') {
+      handleZero();
+    }
+    else if (key === '+') {
+      handlePlus();
+    }
+    else if (key === '-') {
+      handleMinus();
+    }
+    else if (key === '*') {
+      handleMultiply();
+    }
+    else if (key === '/') {
+      handleDivide();
+    }
+    else if (key === '.' || key === ',') {
+      handleDot();
+    }
+    else if (key === '=' || key === 'Enter') {
+      handleResult();
+    }else if(keyWentDown(35)){
+      console.log("EEEEEEEE");
+    }
+    // uncomment to prevent any default behavior
+    // return false;
   }
-  else if (key === '3') {
-    handleThree();
-  }
-  else if (key === '4') {
-    handleFour();
-  }
-  else if (key === '5') {
-    handleFive();
-  }
-  else if (key === '6') {
-    handleSix();
-  }
-  else if (key === '7') {
-    handleSeven();
-  }
-  else if (key === '8') {
-    handleEight();
-  }
-  else if (key === '9') {
-    handleNine();
-  }
-  else if (key === '0') {
-    handleZero();
-  }
-  else if (key === '+') {
-    handlePlus();
-  }
-  else if (key === '-') {
-    handleMinus();
-  }
-  else if (key === '*') {
-    handleMultiply();
-  }
-  else if (key === '/') {
-    handleDivide();
-  }
-  else if (key === '.') {
-    handleDot();
-  }
-  else if (key === '=' || key === 'Enter') {
-    handleResult();
-  }
-  // uncomment to prevent any default behavior
-  // return false;
+  
 }
 
 function handleOne(){
