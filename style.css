@@ -23,6 +23,21 @@ canvas{
   outline: none;
 }
 
+.AddSmallButton{
+  width: 68px; /* 70px */ /* 6.6%px */
+  height: 34px; /* 70px */ /* 13.6%px */
+  border-radius: 10px; /* 15px */
+  background-color: #dde016;
+  font-size: 20px;
+  padding: 10px;
+  background-size: cover;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-transition-duration: 0.0s; /* Safari */
+  transition-duration: 0.0s;
+  outline: none;
+}
+
 .AddCalculatorBase{
   width: 260px; /* 260px 17.4%;*/
   height: 400px; /* 400px */
