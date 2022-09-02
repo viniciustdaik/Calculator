@@ -166,7 +166,7 @@ function setup(){
   //MinusButton.mousePressed(handleMinus);
   //MinusButton.mousePressed(calculate("-"));
   
-  MultiplicationButton = createButton("x|*");
+  MultiplicationButton = createButton("×|*");//× //x
   MultiplicationButton.class("AddButton");
   //MultiplicationButton.mousePressed(handleMultiply);
   //MultiplicationButton.mousePressed(calculate("*"));
@@ -179,7 +179,7 @@ function setup(){
   RaizQuadradaButton = createButton("√");
   RaizQuadradaButton.class("AddSmallButton");
 
-  PotenciaButton = createButton("xy");
+  PotenciaButton = createButton("xY");//&#x00B2
   PotenciaButton.class("AddSmallButton");
   
   DeleteButton = createButton("Del");
