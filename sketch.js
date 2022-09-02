@@ -42,6 +42,8 @@ var initialWidth, newWidthAdded;
 
 var operationPreviewText, numberPreviewText;
 
+var oldNumbers = [''];
+
 function preload(){
   
 }
@@ -250,7 +252,7 @@ function setup(){
   RaizQuadradaButton.mousePressed(handleRaizQuadrada);
   PotenciaButton.mousePressed(handlePotencia);
   ResultButton.mousePressed(handleResult);
-  //DeleteButton.mousePressed(handleDelete);
+  DeleteButton.mousePressed(handleDelete);
   DotButton.mousePressed(handleDot);
   ClearButton.mousePressed(handleClear);
 
@@ -565,51 +567,71 @@ function keyTyped() {
 function handleOne(){
   numbers = numbers+""+1;
   console.log(numbers);
+
+  oldNumbers.push(numbers);
 }
 
 function handleTwo(){
   numbers = numbers+""+2;
   console.log(numbers);
+  
+  oldNumbers.push(numbers);
 }
 
 function handleThree(){
   numbers = numbers+""+3;
   console.log(numbers);
+  
+  oldNumbers.push(numbers);
 }
 
 function handleFour(){
   numbers = numbers+""+4;
   console.log(numbers);
+  
+  oldNumbers.push(numbers);
 }
 
 function handleFive(){
   numbers = numbers+""+5;
   console.log(numbers);
+  
+  oldNumbers.push(numbers);
 }
 
 function handleSix(){
   numbers = numbers+""+6;
   console.log(numbers);
+  
+  oldNumbers.push(numbers);
 }
 
 function handleSeven(){
   numbers = numbers+""+7;
   console.log(numbers);
+  
+  oldNumbers.push(numbers);
 }
 
 function handleEight(){
   numbers = numbers+""+8;
   console.log(numbers);
+  
+  oldNumbers.push(numbers);
 }
 
 function handleNine(){
   numbers = numbers+""+9;
   console.log(numbers);
+  
+  oldNumbers.push(numbers);
 }
 
 function handleZero(){
   numbers = numbers+""+0;
   console.log(numbers);
+  
+  oldNumbers.push(numbers);
 }
 
 function handleClear(){
@@ -618,12 +640,16 @@ function handleClear(){
   allNumbers = [];
   dot = false;
   operation = "";
+  oldNumbers = [''];
 }
 
 function handleDot(){
   if(dot == false && numbers !== ""){
     numbers = numbers+".";
     dot = true;
+
+      
+    oldNumbers.push(numbers);
   }
   console.log(numbers);
 }
@@ -740,6 +766,7 @@ function handleResult(){
       console.log("result:"+result);
     }
     allNumbers = [];
+    oldNumbers = [''];
   }
 }
 
@@ -750,10 +777,13 @@ function handlePlus(){
     dot = false;
     console.log(numbers, allNumbers);
     operation = "plus";
+
+    oldNumbers = [''];
   }
   if(result !== "Sem Resultados" && operation !== "plus"){
     operation = "plus";
   }
+  
 }
 
 function handleMinus(){
@@ -763,6 +793,8 @@ function handleMinus(){
     dot = false;
     console.log(numbers, allNumbers);
     operation = "minus";
+
+    oldNumbers = [''];
   }
   if(result !== "Sem Resultados" && operation !== "minus"){
     operation = "minus";
@@ -776,6 +808,8 @@ function handleMultiply(){
     dot = false;
     console.log(numbers, allNumbers);
     operation = "multiply";
+
+    oldNumbers = [''];
   }
   if(result !== "Sem Resultados" && operation !== "multiply"){
     operation = "multiply";
@@ -789,6 +823,8 @@ function handleDivide(){
     dot = false;
     console.log(numbers, allNumbers);
     operation = "divide";
+
+    oldNumbers = [''];
   }
   if(result !== "Sem Resultados" && operation !== "divide"){
     operation = "divide";
@@ -819,6 +855,14 @@ function handlePotencia(){
     console.log(result);
 
     potencianumbers = "";
+  }
+}
+
+function handleDelete(){
+  if(oldNumbers.length >= 1){
+    numbers = oldNumbers[oldNumbers.length-2];
+    oldNumbers.pop();
+    console.log(numbers);
   }
 }
 
