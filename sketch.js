@@ -665,10 +665,10 @@ function handleResult(){
     allNumbers.push('0');
   }
 
-  if(potencianumbers !== "" && allNumbers.length < 2){
-    result = pow(result, potencianumbers);
-    potencianumbers = "";
-  }
+  //if(potencianumbers !== "" && allNumbers.length < 2){
+  //  result = pow(result, potencianumbers);
+  //  potencianumbers = "";
+  //}
 
   if(allNumbers.length >= 2 || result !== "Sem Resultados"){
     var othernumber = allNumbers[e];
@@ -759,10 +759,10 @@ function handleResult(){
           result = result/othernumber2;
         }
       }
-      if(potencianumbers !== ""){
-        result = pow(result, potencianumbers);
-        potencianumbers = "";
-      }
+      //if(potencianumbers !== ""){
+      //  result = pow(result, potencianumbers);
+      //  potencianumbers = "";
+      //}
       console.log("result:"+result);
     }
     allNumbers = [];
@@ -847,7 +847,7 @@ function handleRaizQuadrada(){
 }
 
 function handlePotencia(){
-  if(numbers !== "" && potencianumbers == ""){
+  if(/*numbers !== ""*/result !== "Sem Resultados" && potencianumbers == ""){
     potencianumbers = numbers;
     numbers = "";
     console.log("Potencia:"+potencianumbers);
