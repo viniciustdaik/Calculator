@@ -15,6 +15,7 @@ var NineButton;
 var ZeroButton;
 
 var PlusButton, MinusButton, MultiplicationButton, DivisionButton, RaizQuadradaButton, 
+PotenciaButton, 
 ClearButton, DeleteButton, ResultButton;
 
 var ResultText;
@@ -30,6 +31,8 @@ var dot = false;
 var raizQuadrada = false;
 
 var operation = "";
+
+var potencianumbers = "";
 
 var keyBoardDelayTime = true;
 
@@ -174,7 +177,10 @@ function setup(){
   //DivisionButton.mousePressed(calculate("/"));
 
   RaizQuadradaButton = createButton("√");
-  RaizQuadradaButton.class("AddButton");
+  RaizQuadradaButton.class("AddSmallButton");
+
+  PotenciaButton = createButton("xy");
+  PotenciaButton.class("AddSmallButton");
   
   DeleteButton = createButton("Del");
   DeleteButton.class("AddButton");
@@ -216,7 +222,8 @@ function setup(){
   MinusButton.position(windowWidth / 2 + 90+1, height / 2 + 10);
   MultiplicationButton.position(windowWidth / 2 + 90+1, height / 2 + 80);
   DivisionButton.position(windowWidth / 2 + 90+1, height / 2 + 150);
-  RaizQuadradaButton.position(windowWidth / 2 + 20+1, height / 2 - 130)
+  RaizQuadradaButton.position(windowWidth / 2 + 20+1, height / 2 - 130);
+  PotenciaButton.position(windowWidth / 2 + 20+1, height / 2 - 95);
   ResultScreen.position(windowWidth / 2 - 105, height / 2 - 190);
   if(!isMobile){
     operationPreviewText.position(ResultScreen.x+5, ResultScreen.y-5-ResultScreen.height);
@@ -241,6 +248,7 @@ function setup(){
   MultiplicationButton.mousePressed(handleMultiply);
   DivisionButton.mousePressed(handleDivide);
   RaizQuadradaButton.mousePressed(handleRaizQuadrada);
+  PotenciaButton.mousePressed(handlePotencia);
   ResultButton.mousePressed(handleResult);
   //DeleteButton.mousePressed(handleDelete);
   DotButton.mousePressed(handleDot);
@@ -354,7 +362,8 @@ function draw(){
     MinusButton.position(windowWidth / 2 + 90+1, height / 2 + 10);
     MultiplicationButton.position(windowWidth / 2 + 90+1, height / 2 + 80);
     DivisionButton.position(windowWidth / 2 + 90+1, height / 2 + 150);
-    RaizQuadradaButton.position(windowWidth / 2 + 20+1, height / 2 - 130)
+    RaizQuadradaButton.position(windowWidth / 2 + 20+1, height / 2 - 130);
+    PotenciaButton.position(windowWidth / 2 + 20+1, height / 2 - 95);
     ResultScreen.position(windowWidth / 2 - 105, height / 2 - 190);
     ResultText.position(ResultScreen.x, ResultScreen.y-5);
 
@@ -629,6 +638,12 @@ function handleResult(){
   if(allNumbers.length === 1 && result !== "Sem Resultados"){
     allNumbers.push('0');
   }
+
+  if(potencianumbers !== "" && allNumbers.length < 2){
+    result = pow(result, potencianumbers);
+    potencianumbers = "";
+  }
+
   if(allNumbers.length >= 2 || result !== "Sem Resultados"){
     var othernumber = allNumbers[e];
     var othernumber2 = allNumbers[e+1];
@@ -676,6 +691,11 @@ function handleResult(){
       }else if(e !== 0 && result !== "Sem Resultados"){
         result = parseFloat(result);
       }
+
+      if(potencianumbers !== ""){
+        potencianumbers = parseFloat(potencianumbers);
+      }
+
       othernumber2 = parseFloat(othernumber2);
       if(result == "Sem Resultados"){
         console.log("number1:"+othernumber, "number2:"+othernumber2);
@@ -712,6 +732,10 @@ function handleResult(){
         }else if(result !== "Sem Resultados"){
           result = result/othernumber2;
         }
+      }
+      if(potencianumbers !== ""){
+        result = pow(result, potencianumbers);
+        potencianumbers = "";
       }
       console.log("result:"+result);
     }
@@ -783,6 +807,14 @@ function handleRaizQuadrada(){
   }*/
   if(result !== "Sem Resultados"){
     result = Math.sqrt(result);
+  }
+}
+
+function handlePotencia(){
+  if(numbers !== "" && potencianumbers == ""){
+    potencianumbers = numbers;
+    numbers = "";
+    console.log("Potencia:"+potencianumbers);
   }
 }
 
