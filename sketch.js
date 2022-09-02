@@ -815,6 +815,10 @@ function handlePotencia(){
     potencianumbers = numbers;
     numbers = "";
     console.log("Potencia:"+potencianumbers);
+    result = pow(result, potencianumbers);
+    console.log(result);
+
+    potencianumbers = "";
   }
 }
 
