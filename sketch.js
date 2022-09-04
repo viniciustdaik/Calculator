@@ -859,7 +859,7 @@ function handlePotencia(){
 }
 
 function handleDelete(){
-  if(oldNumbers.length >= 1){
+  if(oldNumbers.length > 1){
     numbers = oldNumbers[oldNumbers.length-2];
     oldNumbers.pop();
     console.log(numbers);
