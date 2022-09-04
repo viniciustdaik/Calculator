@@ -847,7 +847,7 @@ function handleRaizQuadrada(){
 }
 
 function handlePotencia(){
-  if(/*numbers !== ""*/result !== "Sem Resultados" && potencianumbers == ""){
+  if(numbers !== "" && result !== "Sem Resultados" && potencianumbers == ""){
     potencianumbers = numbers;
     numbers = "";
     console.log("Potencia:"+potencianumbers);
