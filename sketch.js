@@ -68,6 +68,7 @@ function setup(){
   ResultText.position(ResultScreen.x, ResultScreen.y-5);
   ResultText.size(250, 24);
   ResultText.style("text-align", 'center');
+  ResultText.style('color', 'white'); //black
   //ResultText.style("background-color", 'blue');
   
   ResultText.html(result);
