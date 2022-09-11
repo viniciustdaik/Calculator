@@ -44,7 +44,9 @@ var operationPreviewText, numberPreviewText;
 
 var oldNumbers = [''];
 
-var digitSound
+var digitSound;
+
+var windowResize = true;
 
 function preload(){
   digitSound = loadSound('DigitSoundEffect.mp3');
@@ -52,7 +54,7 @@ function preload(){
 }
 
 function setup(){
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth, windowHeight);//windowWidth, windowHeight //500, windowHeight
   
   initialWidth = width;
   
@@ -68,7 +70,6 @@ function setup(){
   ResultText.position(ResultScreen.x, ResultScreen.y-5);
   ResultText.size(250, 24);
   ResultText.style("text-align", 'center');
-  ResultText.style('color', 'white'); //black
   //ResultText.style("background-color", 'blue');
   
   ResultText.html(result);
@@ -208,29 +209,29 @@ function setup(){
   //ClearButton.mousePressed(handleClear);
   //ClearButton.mousePressed(calculate("clear"));
 
-  CalculatorBase.position(windowWidth / 2 - 120, height / 2 - 200);
-  OneButton.position(windowWidth / 2 - 120+1, height / 2 + 80);
-  TwoButton.position(windowWidth / 2 - 50+1, height / 2 + 80);
-  ThreeButton.position(windowWidth / 2 + 20+1, height / 2 + 80);
-  FourButton.position(windowWidth / 2 - 120+1, height / 2 + 10);
-  FiveButton.position(windowWidth / 2 - 50+1, height / 2 + 10);
-  SixButton.position(windowWidth / 2 + 20+1, height / 2 + 10);
-  SevenButton.position(windowWidth / 2 - 120+1, height / 2 - 60);
-  EightButton.position(windowWidth / 2 - 50+1, height / 2 - 60);
-  NineButton.position(windowWidth / 2 + 20+1, height / 2 - 60);
-  ZeroButton.position(windowWidth / 2 - 120+1, height / 2 + 150);
-  DotButton.position(windowWidth / 2 + 20+1, height / 2 + 150);
-  ClearButton.position(windowWidth / 2 - 120+1, height / 2 - 130);
-  DeleteButton.position(windowWidth / 2 - 50+1, height / 2 - 130);
-  //ResultButton.position(windowWidth / 2 + 20+1, height / 2 - 130);
-  ResultButton.position(windowWidth / 2 + 90+1, height / 2 - 130);
-  PlusButton.position(windowWidth / 2 + 90+1, height / 2 - 60);
-  MinusButton.position(windowWidth / 2 + 90+1, height / 2 + 10);
-  MultiplicationButton.position(windowWidth / 2 + 90+1, height / 2 + 80);
-  DivisionButton.position(windowWidth / 2 + 90+1, height / 2 + 150);
-  RaizQuadradaButton.position(windowWidth / 2 + 20+1, height / 2 - 130);
-  PotenciaButton.position(windowWidth / 2 + 20+1, height / 2 - 95);
-  ResultScreen.position(windowWidth / 2 - 105, height / 2 - 190);
+  CalculatorBase.position(width / 2 - 120, height / 2 - 200);
+  OneButton.position(width / 2 - 120+1, height / 2 + 80);
+  TwoButton.position(width / 2 - 50+1, height / 2 + 80);
+  ThreeButton.position(width / 2 + 20+1, height / 2 + 80);
+  FourButton.position(width / 2 - 120+1, height / 2 + 10);
+  FiveButton.position(width / 2 - 50+1, height / 2 + 10);
+  SixButton.position(width / 2 + 20+1, height / 2 + 10);
+  SevenButton.position(width / 2 - 120+1, height / 2 - 60);
+  EightButton.position(width / 2 - 50+1, height / 2 - 60);
+  NineButton.position(width / 2 + 20+1, height / 2 - 60);
+  ZeroButton.position(width / 2 - 120+1, height / 2 + 150);
+  DotButton.position(width / 2 + 20+1, height / 2 + 150);
+  ClearButton.position(width / 2 - 120+1, height / 2 - 130);
+  DeleteButton.position(width / 2 - 50+1, height / 2 - 130);
+  //ResultButton.position(width / 2 + 20+1, height / 2 - 130);
+  ResultButton.position(width / 2 + 90+1, height / 2 - 130);
+  PlusButton.position(width / 2 + 90+1, height / 2 - 60);
+  MinusButton.position(width / 2 + 90+1, height / 2 + 10);
+  MultiplicationButton.position(width / 2 + 90+1, height / 2 + 80);
+  DivisionButton.position(width / 2 + 90+1, height / 2 + 150);
+  RaizQuadradaButton.position(width / 2 + 20+1, height / 2 - 130);
+  PotenciaButton.position(width / 2 + 20+1, height / 2 - 95);
+  ResultScreen.position(width / 2 - 105, height / 2 - 190);
   if(!isMobile){
     operationPreviewText.position(ResultScreen.x+5, ResultScreen.y-5-ResultScreen.height);
     numberPreviewText.position(ResultScreen.x, ResultScreen.y-5-ResultScreen.height);
@@ -860,7 +861,7 @@ function handlePotencia(){
     console.log("Potencia:"+potencianumbers);
     result = pow(result, potencianumbers);
     console.log(result);
-    dot = true;
+    dot = false;
 
     potencianumbers = "";
   }
@@ -871,14 +872,40 @@ function handleDelete(){
     numbers = oldNumbers[oldNumbers.length-2];
     oldNumbers.pop();
     console.log(numbers);
+
+    if(oldNumbers.length > 2){
+      var checknewnum = oldNumbers[oldNumbers.length-2];
+      var checkoldnum = oldNumbers[oldNumbers.length-1];
+
+      //checknewnum = checknewnum.toString();
+      //checkoldnum = checkoldnum.toString();
+      
+      if(checknewnum === false && checkoldnum === true){
+        dot = false;
+      }
+
+      if(checknewnum.includes('.') == false && checkoldnum.includes('.') == true){
+        dot = false;
+        console.log("dot = false");
+      }
+
+      //console.log(checknewnum);
+      //console.log(checkoldnum);
+
+      //console.log(checknewnum.includes(dotCheck));
+      //console.log(checkoldnum.includes(dotCheck));
+    }
   }
 }
 
 function windowResized() {
-  if(!isMobile && windowWidth > width){
-    resizeCanvas(windowWidth, height);
-    if(initialWidth !== width){
-      newWidthAdded = width - initialWidth;
+  if(windowResize == true){
+    if(!isMobile && windowWidth > width){
+      resizeCanvas(windowWidth, height);
+      if(initialWidth !== width){
+        newWidthAdded = width - initialWidth;
+      }
     }
   }
+  
 }
