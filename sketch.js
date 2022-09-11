@@ -869,10 +869,6 @@ function handlePotencia(){
 
 function handleDelete(){
   if(oldNumbers.length > 1){
-    numbers = oldNumbers[oldNumbers.length-2];
-    oldNumbers.pop();
-    console.log(numbers);
-
     if(oldNumbers.length > 2){
       var checknewnum = oldNumbers[oldNumbers.length-2];
       var checkoldnum = oldNumbers[oldNumbers.length-1];
@@ -895,6 +891,10 @@ function handleDelete(){
       //console.log(checknewnum.includes(dotCheck));
       //console.log(checkoldnum.includes(dotCheck));
     }
+
+    numbers = oldNumbers[oldNumbers.length-2];
+    oldNumbers.pop();
+    console.log(numbers);
   }
 }
 
