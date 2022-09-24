@@ -69,6 +69,7 @@ function setup(){
   ResultText = createElement("h3");
   ResultText.position(ResultScreen.x, ResultScreen.y-5);
   ResultText.size(250, 24);
+  ResultText.style("color", 'white');
   ResultText.style("text-align", 'center');
   //ResultText.style("background-color", 'blue');
   
